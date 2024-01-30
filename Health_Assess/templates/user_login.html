@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body style = "background:url('/static/b.jpg') center / cover no-repeat;">
+		<div class="login" style="background-color:#000080">
+			<h1 style = "color:#ffffff;">Login</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" class="active" style="color:cyan">Login</a>
+				<a href="{{ url_for('user_register') }}" style="color:cyan">Register</a>
+				<div class="msg" style="color:white;">{{ msg }}</div>
+			</div>
+			<form action="{{ url_for('login') }}" method="post">
+				<label for="username">
+					<i class="fas fa-user" style = "color:white;"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock" style = "color:white;"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<div class="msg" style="color:white;">{{ msg }}</div>
+				<input type="submit" value="Login" style="background-color:cyan;color:#00008B;font-size:20px;">
+			</form>
+		<div class="msg" style="color:white;">{{ msg }}</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body style = "background:url('/static/b.jpg') center / cover no-repeat;">
+		<div class="register" style="background-color:#000080">
+			<h1 style = "color:#ffffff;">Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" style="color:cyan">Login</a>
+				<a href="{{ url_for('user_register') }}" class="active" style="color:cyan">Register</a>
+			</div>
+			<form action="{{ url_for('user_register') }}" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Enter Username" id="username" required>
+				
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Enter Password" id="password" required>
+				
+				<label for="pname">
+					<i class="fas fa-address-book"></i>
+				</label>
+				<input type="text" name="pname" placeholder="Enter Name" id="pname" required>
+				
+				<label for="page">
+					<i class="fas fa-calendar"></i>
+				</label>
+				<input type="text" name="page" placeholder="Enter Age" id="page" required>
+				
+				<label for="pcontact">
+					<i class="fas fa-phone"></i>
+				</label>
+				<input type="text" name="p_contact" placeholder="Enter Contact Number" id="p_contact" required>
+				<div class="msg" style="color:#ffffff;">{{ msg }}</div>
+				<input type="submit" value="Register" style="background-color:cyan;color:#00008B;font-size:20px;">
+			</form>
+		</div>
+	</body>
+</html>
